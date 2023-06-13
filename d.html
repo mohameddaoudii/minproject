@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="fileInput" multiple />
+    <button id="uploadButton">Upload</button>
+  </body>
+  <script src="js/jquery-3.6.4.min.js"></script>
+  <script>
+    let arrayimage = Array();
+    $("#fileInput").on("change", function ({ target }) {
+      var filess = fileInput.files[0];
+      console.log(filess);
+      arrayimage.push(filess);
+    });
+
+    $("#uploadButton").click(function () {
+      arrayimage.forEach((e) => {
+        var formData = new FormData();
+        formData.append("image1", e);
+
+        $.ajax({
+          url: "./fonction/traitementproducet.php",
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function (response) {
+            console.log(response);
+          },
+        });
+      });
+    });
+  </script>
+</html>
