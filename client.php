@@ -87,6 +87,7 @@
             </main>
         </div>
         <form class="form-container" id="reset">
+            <i class="fa-sharp fa-solid fa-arrow-left-long" id="las1"></i>
             <h2>new client</h2>
             <div class="form-group">
                 <input type="text" id="name" />

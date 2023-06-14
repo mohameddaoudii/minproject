@@ -405,6 +405,7 @@ padding-top: 10px;
     max-width: 98%;
     height: 239px;
     max-height: 240px;
+    color: rgb(27, 25, 25) !important;
 }
 
 .info1 select {
@@ -973,4 +974,15 @@ table th {
     /* background: red; */
     max-width: 250px;
     text-overflow: ellipsis;
+}
+
+
+#las3 {
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    font-size: 30px;
+    color: blue;
+    cursor: pointer;
+    color: rgb(37, 149, 255);
 }

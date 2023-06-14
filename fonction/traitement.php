@@ -58,8 +58,7 @@ if(isset($_POST['search'])){
         $delet = get_object_vars($delet);
      }   
      $idc = $delet['idc'] ; 
-      $object->delet($idc);  
-      echo "delet";
+     echo $object->delet($idc);  
  } 
 
   if(isset($_POST['sendemail'])){  

@@ -188,6 +188,10 @@ $(document).ready(function () {
   });
   document.addEventListener("click", (e) => {
     if (e.target.dataset.text == "click") {
+      let ii = $(".image").children("i");
+      ii.css("display", "none");
+      $(".image").children("img").css("border", "2px dashed rgb(0, 153, 255)");
+
       console.log("hellow ot sfs");
       // e.style.cssText = "border-color:red;";
       let delet = document.getElementById(`id${e.target.dataset.id}`);
@@ -225,6 +229,14 @@ $(document).ready(function () {
 
   $("#next1").click(function (e) {
     e.preventDefault();
+    if (imagesArray.length == 0) {
+      $(".updatephotos").slideToggle(1500, function () {
+        $(".successfuly").text("update photo successfuly ");
+        $(".successfuly").fadeToggle(1500, function () {
+          $(".successfuly").fadeToggle(1500);
+        });
+      });
+    }
     imagesArray.forEach((e, index) => {
       console.log(index);
       if (index == imagesArray.length - 1) {
@@ -258,8 +270,8 @@ $(document).ready(function () {
               // console.log(this.responseText);
               $(".updatephotos").slideToggle(1500, function () {
                 $(".successfuly").text("update photo successfuly ");
-                $(".successfuly").slideToggle(1700, function () {
-                  $(".successfuly").slideToggle(1700);
+                $(".successfuly").fadeToggle(1500, function () {
+                  $(".successfuly").fadeToggle(1500);
                 });
               });
             }
@@ -293,6 +305,10 @@ $(document).ready(function () {
   });
   $("#updatephoto").click(function () {
     $(".updatephotos").slideToggle(1500);
+  });
+
+  $("#las2").click(function () {
+    $(".containerupdate").slideToggle(1500);
   });
 });
 $(".imageproducte").click(function () {

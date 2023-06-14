@@ -199,5 +199,8 @@ $(document).ready(function () {
       xtp.send("search=" + encodeURIComponent(JSON.stringify(data)));
     });
   });
+  $("#las1").click(function () {
+    $(".form-container").slideToggle(1500);
+  });
 });
 // });

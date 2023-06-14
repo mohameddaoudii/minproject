@@ -101,6 +101,7 @@ if(isset($_GET["idc"]))  {
         </div>
 
         <form class="form-container" id="reset">
+            <i class="fa-sharp fa-solid fa-arrow-left-long" id="las2"></i>
             <h2>Edite clinet</h2>
             <div class="form-group">
                 <input type="text" id="name" value="<?php echo $info[0]['name']  ?>" />
@@ -125,6 +126,7 @@ if(isset($_GET["idc"]))  {
             <button id="ajoute">edite</button>
         </form>
         <div class="cotanteclient">
+            <i class="fa-sharp fa-solid fa-arrow-left-long" id="las1"></i>
             <h2>contacte</h2>
             <div>
                 <p class="subject">subject</p>
@@ -140,10 +142,10 @@ if(isset($_GET["idc"]))  {
         </div>
 
         <div id="statusinsert">
-            edite succesufly
+
         </div>
         <div id="deletsta">
-            delet succesufly
+            <p>can't delet this client</p>
         </div>
     </div>
 

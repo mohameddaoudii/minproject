@@ -123,6 +123,7 @@ $(document).ready(function () {
 
           if (this.responseText == "edite") {
             $(".form-container ").slideToggle(1000);
+            $("#statusinsert").html("<p>update successfully </p>");
             function fadeout() {
               $("#statusinsert").fadeOut(1000);
             }
@@ -157,17 +158,20 @@ $(document).ready(function () {
       if (this.status === 200 && this.readyState === 4) {
         // console.log(this.responseText);
 
-        if (this.responseText == "delet") {
+        if (this.responseText == "delet successfully") {
+          $("#statusinsert").html("<p>Delet successfully </p>");
           function fadeout() {
-            $("#deletsta").fadeOut(1000);
+            $("#statusinsert").fadeOut(1000);
           }
-          $("#deletsta").fadeIn(1500, function () {
+          $("#statusinsert").fadeIn(1500, function () {
             setTimeout(fadeout(), 1500);
           });
           window.location =
             "http://localhost:8080/gestioncommend/admin/client.php";
         } else {
-          console.log(this.responseText);
+          $("#deletsta").fadeToggle(1500, function () {
+            $("#deletsta").fadeToggle(1500);
+          });
         }
       }
     };
@@ -223,7 +227,7 @@ $(document).ready(function () {
             $("#subjec").val("");
             $("#body").val("");
             $(".cotanteclient").slideToggle(1500, function () {
-              $("#statusinsert").text("Send Email Successfully");
+              $("#statusinsert").html("<p>email send  successfully </p>");
               $("#statusinsert").fadeToggle(1500, function () {
                 $("#statusinsert").fadeToggle(1500);
               });
@@ -239,9 +243,14 @@ $(document).ready(function () {
       }
     });
   });
+  $("#las1").click(function () {
+    $(".cotanteclient").slideToggle(1500);
+  });
+  $("#las2").click(function () {
+    $(".form-container").slideToggle(1500);
+  });
 });
 
 // console.log("navigator", Navigator.platform);
 // document.cookie = "nav = 'daoudi'";
 // let s = Array(f, e, s);
-// // let im = new Image()

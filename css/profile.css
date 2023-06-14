@@ -455,29 +455,62 @@ button:hover {
     display: none;
 }
 
+#statusinsert p {
+    width: fit-content;
+    margin-top: 50px;
+}
+
 #deletsta {
     padding: 10px 16px;
-    background: #15ed26;
+    background: #e6140d;
     width: fit-content;
     position: absolute;
     height: 55px;
-    bottom: 15%;
-    left: 54%;
+    bottom: 38%;
+    left: 45%;
     border-radius: 20px;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     text-transform: capitalize;
     color: #ffffffe6;
     font-weight: bold;
     font-size: 18px;
+    width: 286px;
+    height: 164px;
+    font-size: 25px;
     display: none;
+}
+
+#deletsta p {
+    width: fit-content;
+    margin-top: 50px;
 }
 
 #i {
     display: none;
 }
 
+/* 
 #email {
     display: none;
+} */
+.cotanteclient i {
+    position: absolute;
+    top: 0%;
+    left: 3%;
+    font-size: 30px;
+    color: blue;
+    cursor: pointer;
+    color: #29B6F6;
+}
+
+.form-container i {
+    position: absolute;
+    top: 0%;
+    left: 3%;
+    font-size: 30px;
+    color: blue;
+    cursor: pointer;
+    color: #29B6F6;
 }

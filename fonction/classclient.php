@@ -32,9 +32,14 @@ class gestionclient extends connection{
    } 
    //function remove client 
    public function delet($id_client){ 
-    $sql ="DELETE FROM `client` WHERE `id_client` = ? "; 
+    $sql ="DELETE FROM client WHERE id_client = ? and id_client not in (SELECT id_client FROM commande);"; 
     $stmt = $this->connectiondb()->prepare($sql); 
     $stmt->execute([$id_client]);
+    if($stmt->rowCount()>0){ 
+      return "delet successfully"; 
+    }else{ 
+      return "can't delet this client";
+    }
    } 
 
    //function  insert client  

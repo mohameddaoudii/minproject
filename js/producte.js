@@ -189,6 +189,32 @@ $(document).ready(function () {
       lastcat = categorie;
     }
     console.log("lenght", imagesArray.length);
+    if (imagesArray.length == 0) {
+      let xtp = new XMLHttpRequest();
+      xtp.open("post", "./fonction/traitementproducet.php");
+      xtp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xtp.onreadystatechange = function () {
+        if (this.status === 200 && this.readyState === 4) {
+          if (this.responseText == "insert producte") {
+            console.log("fuck in your day");
+            $(".parte3").slideToggle(1000, function () {
+              $(".successfully").fadeToggle(1500, function () {
+                $(".successfully").fadeToggle(1500);
+              });
+            });
+          }
+        }
+      };
+      var data = {
+        cat: lastcat,
+        descriptions: description,
+        pris: prix,
+        quantites: quantite,
+        designaions: designaion,
+        refs: ref,
+      };
+      xtp.send("infoproducte=" + encodeURIComponent(JSON.stringify(data)));
+    }
 
     imagesArray.forEach((e, index) => {
       console.log(index);
@@ -307,5 +333,8 @@ $(document).ready(function () {
       };
       xtp.send("search=" + encodeURIComponent(JSON.stringify(data)));
     });
+  });
+  $("#las3").click(function () {
+    $(".containerupdate").slideToggle(1500);
   });
 });

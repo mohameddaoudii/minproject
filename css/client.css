@@ -583,3 +583,13 @@ button:hover {
     font-size: 18px;
     display: none;
 }
+
+.form-container i {
+    position: absolute;
+    top: 0%;
+    left: 3%;
+    font-size: 30px;
+    color: blue;
+    cursor: pointer;
+    color: #29B6F6;
+}

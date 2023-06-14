@@ -319,6 +319,7 @@ if(isset($_GET['idproducte'])){
             </div>
         </div>
         <div class="containerupdate">
+            <i class="fa-sharp fa-solid fa-arrow-left-long" id="las2"></i>
             <h2>upadte information producte</h2>
             <div>
                 <form action="">

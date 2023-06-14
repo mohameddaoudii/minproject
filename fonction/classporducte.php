@@ -55,13 +55,11 @@ include "db.php";
             return $money * $this->selling($id_producte);
         }
         public function n_commen_ex($id_producte){ 
-            $sql = "SELECT COUNT(*) as numbers FROM commande INNER JOIN lignecommande on commande.id_command = lignecommande.id_command WHERE commande.etat = 'encommande' and lignecommande.id_produit =?;";
+            $sql = "SELECT * FROM commande INNER JOIN lignecommande on commande.id_command = lignecommande.id_command WHERE commande.etat = 'encommande' and lignecommande.id_produit =? GROUP BY lignecommande.id_produit;";
             $resulta = $this->connectiondb()->prepare($sql); 
             $resulta->execute([$id_producte]);
-            $number = "";
-            while ($row = $resulta->fetch(PDO::FETCH_ASSOC)){ 
-                $number =  $row["numbers"] ;
-            } 
+            $number = $resulta->rowCount() ;
+          
             return $number;
         }
          public function returns($id_producte){ 
@@ -257,10 +255,16 @@ include "db.php";
         }
         return $searcharray;
         
-  }
+  } 
+    public function updatephotoprince($id_producte,$photo){ 
+            $sqlphoto = "UPDATE produit SET photo =  ? WHERE id_produit =? "; 
+            $result = $this->connectiondb()->prepare($sqlphoto);
+            $result->execute([$photo,$id_producte]); 
+      } 
+
  }
  $object =new gestionproducte();  
 //  echo "<pre>";
 //  print_r($object->selecproducte()); 
-// echo $object->upadetinfoprodute(1,"mohamed","cat",12,111,"encours","pas detail","labtop");
+//    echo $object->n_commen_ex(16856472);
 ?>

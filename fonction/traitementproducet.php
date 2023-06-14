@@ -44,8 +44,11 @@ if(isset($_POST['infoproducte'])){
         // with get_object_vars function
         $infoproducte = get_object_vars($infoproducte);
     }   
-     $lines = file('image.txt'); 
-     $photos = $lines[0];
+     $lines = file('image.txt');  
+     $photos = $lines[0]; 
+     if(empty($photos)){ 
+        $photos = 'admin/image/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg';
+     }
      $ref_produit = $infoproducte['refs'];
      $design =$infoproducte['designaions'];
      $cat =$infoproducte['cat'];
@@ -119,7 +122,8 @@ if(isset($_POST['insertph'])){
         $insertph = get_object_vars($insertph);
      }    
     $id_produite = $insertph['idp'];
-    $lines = file('image.txt');
+    $lines = file('image.txt'); 
+    $object->updatephotoprince($id_produite,$lines[0]);
     $count = 0;
     foreach($lines as $line) {
        $object->insertphoto($id_produite,$line);

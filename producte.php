@@ -89,6 +89,7 @@
 
 
          <div class="containerupdate">
+             <i class="fa-sharp fa-solid fa-arrow-left-long" id="las3"></i>
              <h2>insert producte</h2>
              <div>
                  <form action="">

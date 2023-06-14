@@ -780,3 +780,11 @@ tbody tr:hover {
 #nothing {
     display: none;
 }
+
+#las2 {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: -2px;
+    padding-top: 1px;
+    cursor: pointer;
+}

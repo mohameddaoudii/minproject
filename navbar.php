@@ -12,8 +12,7 @@
         <li><a href="home.php"> home</a></li>
         <li><a href="client.php"> client</a></li>
         <li><a href="producte.php"> producte</a></li>
-        <li><a href="commande.php"> commend</a></li>
-        <li><a href=""> order</a></li>
+        <li><a href="commande.php"> order</a></li>
 
         <!-- <li> <a href=""> home</a></li> -->
     </ul>
@@ -54,14 +53,6 @@
                             <li>
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </li>
-                            <li>commande</li>
-                        </a>
-                    </ul>
-                </li>
-                <li>
-                    <ul>
-                        <a href="">
-                            <li><i class="fa-brands fa-first-order"></i></li>
                             <li>order</li>
                         </a>
                     </ul>
